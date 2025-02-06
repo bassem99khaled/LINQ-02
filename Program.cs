@@ -121,6 +121,22 @@ namespace LINQ_02
             //        Console.WriteLine(item);
 
             #endregion
+
+            #region Generation Operators
+
+          // // The Only Way for calling these Operators => as Static Method throught "Enymerable" Class.
+          //
+          // var Result = Enumerable.Range(0, 100);
+          //
+          // foreach(var item in Result)
+          //     Console.WriteLine($"{item}\t");
+          //
+          // Result = Enumerable.Repeat(2, 100);
+          //
+          // var Result02 = Enumerable.Repeat(new Product() {  Category= "meat"} , 100);
+          //
+          // var Result = Enumerable.Empty<Product>();
+            #endregion
         }
     }
     }
