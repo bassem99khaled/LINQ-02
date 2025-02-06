@@ -197,23 +197,37 @@ namespace LINQ_02
 
             #region Quantifier Operators - Return Boolean Value
 
-        //  var Product = new Product();
-        //      {
-        //      productId =1
-        //      productName = ""
-        //      Cagegory = ""
-        //      unitPrice = 8000
-        //  };
+            //  var Product = new Product();
+            //      {
+            //      productId =1
+            //      productName = ""
+            //      Cagegory = ""
+            //      unitPrice = 8000
+            //  };
 
 
-          //  Console.WriteLine(
-           //ProductList.Any() // Return True , if Sequence Contains at Least One Element
-           // ProductList.Any(P => P.UnitsInStock ==0 ) // Retrun true . if Sequence Contains at least one matching element
-           // ProductList,All(P => P.UnitsInStock > 0) // return ture , if All Elements of sequence are MAtching the condition
+            //  Console.WriteLine(
+            //ProductList.Any() // Return True , if Sequence Contains at Least One Element
+            // ProductList.Any(P => P.UnitsInStock ==0 ) // Retrun true . if Sequence Contains at least one matching element
+            // ProductList,All(P => P.UnitsInStock > 0) // return ture , if All Elements of sequence are MAtching the condition
             //ProductList.Contains(Product)
             //productlist,Contians(Product , new ProductEqualityComparer())
-          //                  );
-                #endregion
+            //                  );
+            #endregion
+
+            #region Transformation Operators | ZIP
+
+                //   List<string> Words = new List<string>() {  " Ten" , " TWenty" , " Thrity" ,"Fourty"};
+                //
+                //   int[] Numbers = [10, 20, 30, 40, 50, 60, 70];
+                //   
+                //   var Result = Numbers.Zip(Words);
+                //   var Result02 = Numbers.Zip(Words, (number ,word) => $"{number} == {word}");
+                //   var Result03 = Numbers.Zip(Words, [1, 2, 3]); // C# 10.0 Feature
+                //
+                //   foreach (var item in Result03)
+                //       Console.WriteLine(item);
+            #endregion
         }
     }
     }
