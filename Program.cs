@@ -195,6 +195,25 @@ namespace LINQ_02
 
             #endregion
 
+            #region Quantifier Operators - Return Boolean Value
+
+        //  var Product = new Product();
+        //      {
+        //      productId =1
+        //      productName = ""
+        //      Cagegory = ""
+        //      unitPrice = 8000
+        //  };
+
+
+          //  Console.WriteLine(
+           //ProductList.Any() // Return True , if Sequence Contains at Least One Element
+           // ProductList.Any(P => P.UnitsInStock ==0 ) // Retrun true . if Sequence Contains at least one matching element
+           // ProductList,All(P => P.UnitsInStock > 0) // return ture , if All Elements of sequence are MAtching the condition
+            //ProductList.Contains(Product)
+            //productlist,Contians(Product , new ProductEqualityComparer())
+          //                  );
+                #endregion
         }
     }
     }
