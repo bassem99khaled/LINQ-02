@@ -124,19 +124,77 @@ namespace LINQ_02
 
             #region Generation Operators
 
-          // // The Only Way for calling these Operators => as Static Method throught "Enymerable" Class.
-          //
-          // var Result = Enumerable.Range(0, 100);
-          //
-          // foreach(var item in Result)
-          //     Console.WriteLine($"{item}\t");
-          //
-          // Result = Enumerable.Repeat(2, 100);
-          //
-          // var Result02 = Enumerable.Repeat(new Product() {  Category= "meat"} , 100);
-          //
-          // var Result = Enumerable.Empty<Product>();
+            // // The Only Way for calling these Operators => as Static Method throught "Enymerable" Class.
+            //
+            // var Result = Enumerable.Range(0, 100);
+            //
+            // foreach(var item in Result)
+            //     Console.WriteLine($"{item}\t");
+            //
+            // Result = Enumerable.Repeat(2, 100);
+            //
+            // var Result02 = Enumerable.Repeat(new Product() {  Category= "meat"} , 100);
+            //
+            // var Result = Enumerable.Empty<Product>();
             #endregion
+
+            #region Set Operators - Union Family Operators 
+
+            #region Example 01
+            //  var Seq01 = Enumerable.Range(0, 100);
+            //  var Seq02 = Enumerable.Range(50, 100);
+            //
+            //  var Result = Seq01.Union(Seq02); // Mergin with Removing Duplicates [0 - 99 - 149 ]
+            //
+            //  Result = Seq01.Concat(Seq02); // Mergiing without Removing Dulicates
+            //
+            //  Result = Result.Distinct(); // Remove Dublicates [ Filtration Operators ]
+            //
+            //  Result = Seq01.Intersect(Seq02); // [ 50 .. 99]
+            //
+            //  Result = Seq01.Except(Seq02); // [ 0 .. 49]
+            //
+            //  foreach (var item in Result) 
+            //      Console.WriteLine(item);
+            //
+            #endregion
+
+            #region Example 02
+
+            //  var Seq01 = new List<Product>
+            //  { };
+            //  var Seq02 = new List<Product>
+            //  { };
+
+            /// var Result = Seq01.Union(Seq02); // merging with Removing Duplication
+            ///
+            /// Result = Seq01.Union(Seq02, new ProductEqualityComparer());
+            ///
+            /// Result = Seq01.UnionBy(Seq02, P => P.ProductId);
+            /// Result = Seq01.UnionBy(Seq02, P => P.Category , new CategoryEqulityComparer());
+
+            ///  var Result = Seq01.Intersect(Seq02);
+            ///  var Result = Seq01.Intersect(Seq02, new ProductEqualityComparer());
+            ///
+            ///  Result = Seq01.IntersectBy(Seq02.Select(P2 = P2.UnitPrice), P => P.UnitPrice);
+            ///
+
+            ///   var Result =Seq01.Except(Seq02);
+            ///   Result = Seq01.Except(Seq02, new ProductEqualityComparer());
+            ///   Result = Seq01.Except(Seq02.Select(P2 => P2.UnitPrice) , P =>P.UnitPrice)  ;
+            ///   
+
+            /// var Result = Seq01.Distinct();
+            /// Result = Seq01.Distinct(new ProductEqualityComparer());
+            /// Result = Seq01.Distinct(P => P.Category , new ProductEqualityComparer);
+
+            // foreach (var item in Result)
+            //     Console.WriteLine(item);
+
+            #endregion
+
+            #endregion
+
         }
     }
     }

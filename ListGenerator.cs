@@ -8,6 +8,25 @@ using System.Xml.Linq;
 
 namespace LINQ_02
 {
+    class ProductEqualityComparer : IEqualityComparer<Product>
+    {
+        bool IEqualityComparer<Product>.Equals(Product? x, Product? y)
+        {
+            => x?.ProductId.Equals(y?.ProductId) ?? (y is null ? true : false);
+        }
+        class ProductEqualityComparer02 : IEqualityComparer<Product>
+        {
+            bool IEqualityComparer<Product>.Equals(Product? x, Product? y)
+            {
+            => x?.UnitPrice.Equals(y?.ProductId) ?? (y is null ? true : false);
+            }
+
+            int IEqualityComparer<Product>.GetHashCode(Product obj)
+        {
+            throw new NotImplementedException();
+        }
+    }
+
     class ProductComparer : IComparer<Product>
     {
         int IComparer<Product>.Compare(Product? x, Product? y)
