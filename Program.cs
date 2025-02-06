@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
@@ -82,6 +83,42 @@ namespace LINQ_02
             // Console.WriteLine(FullName);
 
             #endregion
+
+            #endregion
+
+            #region Conversion ( Casting ) Operators - Immediate Execution
+
+            //    //var Result = ProductList.Where(P => P.UnitsInStock == 0);
+            //
+            //    List<Product> Result = ProductList.Where(P => P.UnitsInStock == 0).ToList();
+            //
+            //    Product[] array = ProductList.Where(P => P.UnitsInStock == 0).ToArray();
+            //
+            //    Dictionary<long, Product> dictionary = ProductList.Where(P => P.UnitsInStock == 0)
+            //        .ToDictionary(P => P.ProductId);
+            //
+            //   // Dictionary<long, Product> dictionary = ProductList.Where(P => P.UnitsInStock == 0)
+            //   //     .ToDictionary(P => P.ProductId , new CustomEquaultyComparer());
+            //
+            //    Dictionary<long , string > Dictionary02 = ProductList.Where(P => P.UnitsInStock ==0)
+            //        .ToDictionary(P => P.ProductId, P => P.ProductName);
+            //
+            //    //Dictionary<long, string> Dictionary02 = ProductList.Where(P => P.UnitsInStock == 0)
+            //      //.ToDictionary(P => P.ProductId, P => P.ProductName , new CustomEquaultyComparer());
+            //
+            //    HashSet<Product>  hashSet = ProductList.Where(P => P.UnitsInStock == 0)
+            //        .ToHashSet();
+            //
+            //    //hashSet = ProductList.Where(P => P.UnitsInStock == 0)
+            //    //    .ToHashSet(new CustomEquaultyComparer());
+            //
+            //    var SortedCollection = ProductList.Where( P => P.UnitsInStock ==0).ToImmutableSortedSet();
+            //
+            //    SortedCollection.Add(new Product() { ProductName = "Hamda" });
+            //
+            //  
+            //    foreach (var item  in SortedCollection)
+            //        Console.WriteLine(item);
 
             #endregion
         }
