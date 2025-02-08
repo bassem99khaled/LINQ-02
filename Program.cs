@@ -15,6 +15,103 @@ namespace LINQ_02
     {
         static void Main(string[] args)
         {
+            // Element Operators Are Vaild Only At Fluent syntax
+
+            #region Element Operators - Immediate Excution
+
+            #region First() , Last() , FirstOrDefault() , LastOrDefualt() - Part 01
+            // ProductList = new List<Produdct>();
+            //
+            // var Result = productList.Frist();
+            // Result = ProductList.Last();
+            //
+            // var Result = ProductList.FirstOrDefault();
+            // Result = ProductList.FirstOrDefault(new ProductEqualityComparer() { ProductName = "Bassem" });
+            //
+            // Result = ProductList.LastOrDefault();
+            //
+            // Console.WriteLine(Result?.ProductName?? "NA");
+            #endregion
+
+            #region First() , Last() , FirstOrDefault() , LastOrDefualt() - Part 02
+
+            // var Result = ProductList.First( P => P.UnitsInStock == 0 );
+            // Result = ProductList.Last( P.UnitInStock ==0 ) ;
+
+
+            // var Result = ProductList.FirstOrDefult( P => P.UnitInStock == 0 );
+
+            #endregion
+
+            #region ElementAt() , ElementAtOrDefault()
+
+            //  var Result = ProductList, ElmentAt(10);
+            // Result = productList.ElementAt(new Index(10,true));
+
+            // Result = PrdouctList.ElementAt(^10);
+
+            //var Result = ProductList.ElementAtOrDefault(1000);
+
+ #endregion
+
+            #region Single() , SingleOrDefult - Part 01
+            //   var DiscountedProduct = new List<Product>() { ProductList[0] , ProductList[1] };
+            //
+            //
+            // //  var Result = ProductList.Signle();
+            //   // if Sequence Contains Just ONly one Element will return signle Element
+            //   // else will throw exception ( sequence is empty or contains more than one elment )
+            //
+            //   var Result = DiscountedProduct.SingleOrDefault();
+            //   // if sequence is empety , will return default value for type product
+            //   // if seqence Contains just only one element , will return single elment
+            //
+            //   Result = DiscountedProduct.SingleOrDefault(new Product)
+            //
+            //
+            //
+
+            #endregion
+
+            #region Single() , SingleOrDefult - Part 02
+            // Var result = productList.Single(P => P.ProductId == 10);
+            // if Sequnce Contains Just only one element Matching Condition , will Return
+            // throw Exeption , if Zero or more than one Element is Matching the Conditions
+
+            //   var Result = ProductList.SingleOrDefault(P => P.ProductId == 1000);
+            // if Sequnce Contains Just only one element Matching Condition , will Return
+            // throw Exeption , if Zero or more than one Element is Matching the Conditions
+            // if sequence Contains More than one Element Matching Condition , will throw Exception
+
+            // var Result = ProductList.SingleOrDefault(P => P.ProductId == 1000 , new Product() {  ProductId= 1000 , ProductName = " Bassem"});
+            // if Sequnce Contains Just only one element Matching Condition , will Return Specified Defult Value
+            // throw Exeption , if Zero or more than one Element is Matching the Conditions, will return Single value
+            // if sequence Contains More than one Element Matching Condition , will throw Exception
+
+
+
+            #endregion)
+
+            #region firstOrDefault() VS SingleOrDefault()
+
+            // var FirstOrDefault = ProductList.FirstOrDefault(Product => P.ProductId== 10);
+            // var SingleOrDefault = ProductList.SingleOrDefault ( p = P.ProductId ==10);
+            //
+            //
+            // Console.WriteLine(SingleOrDefault?.ProductName ?? " NA");
+
+            #endregion
+
+            #region Hybrid Syntax
+            // Hybrid Syntax : (Query Expression).Fluent Syntax
+            // var Result = from P in ProductList
+            //                  where P.UnitsInStock == 0 
+            //                  select P).FirstOrDefault();
+            //
+            #endregion
+
+            #endregion
+
             #region Aggeregation Operators - Immediate Execution
 
             #region Count() , TryGetNonEnumeratedCount()
@@ -217,17 +314,18 @@ namespace LINQ_02
 
             #region Transformation Operators | ZIP
 
-                //   List<string> Words = new List<string>() {  " Ten" , " TWenty" , " Thrity" ,"Fourty"};
-                //
-                //   int[] Numbers = [10, 20, 30, 40, 50, 60, 70];
-                //   
-                //   var Result = Numbers.Zip(Words);
-                //   var Result02 = Numbers.Zip(Words, (number ,word) => $"{number} == {word}");
-                //   var Result03 = Numbers.Zip(Words, [1, 2, 3]); // C# 10.0 Feature
-                //
-                //   foreach (var item in Result03)
-                //       Console.WriteLine(item);
+            //   List<string> Words = new List<string>() {  " Ten" , " TWenty" , " Thrity" ,"Fourty"};
+            //
+            //   int[] Numbers = [10, 20, 30, 40, 50, 60, 70];
+            //   
+            //   var Result = Numbers.Zip(Words);
+            //   var Result02 = Numbers.Zip(Words, (number ,word) => $"{number} == {word}");
+            //   var Result03 = Numbers.Zip(Words, [1, 2, 3]); // C# 10.0 Feature
+            //
+            //   foreach (var item in Result03)
+            //       Console.WriteLine(item);
             #endregion
+
         }
     }
     }
