@@ -233,7 +233,74 @@ namespace LINQ_02
                 {
                     Console.WriteLine(chars);
                 }
-      
+
+
+            #endregion
+
+            #region Partitioning Operators
+
+
+            // 1. Get the first 3 orders from customers in Washington
+         
+            var firstThreeOrdersInWashington = ListGenerator.CustomerList
+                    .Where(c => c.Region == "WA")
+                    .SelectMany(c => c.Orders)
+                    .Take(3);
+
+                foreach (var order in firstThreeOrdersInWashington)
+                {
+                    Console.WriteLine(order);
+                }
+
+
+                // 2. Get all but the first 2 orders from customers in Washington
+                
+            var allButFirstTwoOrdersInWashington = ListGenerator.CustomerList
+                    .Where(c => c.Region == "WA")
+                    .SelectMany(c => c.Orders)
+                    .Skip(2);
+
+                foreach (var order in allButFirstTwoOrdersInWashington)
+                {
+                    Console.WriteLine(order);
+                }
+
+
+
+                // 3. Return elements starting from the beginning until a number is less than its position
+               
+            var numbers = new int[] { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+                var numbersUntilLessThanPosition = numbers
+                    .TakeWhile((n, index) => n >= index);
+
+                foreach (var num in numbersUntilLessThanPosition)
+                {
+                    Console.WriteLine(num);
+                }
+
+                
+                // 4. Get elements starting from the first element divisible by 3
+              
+            var numbersFromFirstDivByThree = numbers
+                    .SkipWhile(n => n % 3 != 0);
+
+                foreach (var num in numbersFromFirstDivByThree)
+                {
+                    Console.WriteLine(num);
+                }
+
+              
+                // 5. Get elements starting from the first element less than its position
+              
+            var numbersFromFirstLessThanPosition = numbers
+                    .SkipWhile((n, index) => n >= index);
+
+                foreach (var num in numbersFromFirstLessThanPosition)
+                {
+                    Console.WriteLine(num);
+                }
+       
+
 
     #endregion
 
