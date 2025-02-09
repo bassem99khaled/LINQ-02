@@ -162,7 +162,79 @@ namespace LINQ_02
                 {
                     Console.WriteLine($"{category.Category}: {category.AveragePrice:C}");
                 }
-   
+
+            #endregion
+
+            #region Set Operators
+
+
+                 // 1. Unique Category names from Product List
+           
+            var uniqueCategories = ListGenerator.ProductList
+                    .Select(p => p.Category)
+                    .Distinct();
+
+               
+                foreach (var category in uniqueCategories)
+                {
+                    Console.WriteLine(category);
+                }
+
+
+
+
+                // 2. Unique first letter from both product and customer names
+               
+            var uniqueFirstLetters = ListGenerator.ProductList.Select(p => p.ProductName[0])
+                    .Union(ListGenerator.CustomerList.Select(c => c.CustomerName[0]))
+                    .Distinct();
+
+
+                foreach (var letter in uniqueFirstLetters)
+                {
+                    Console.WriteLine(letter);
+                }
+
+
+
+                // 3. Common first letter from both product and customer names
+              
+            var commonFirstLetters = ListGenerator.ProductList.Select(p => p.ProductName[0])
+                    .Intersect(ListGenerator.CustomerList.Select(c => c.CustomerName[0]));
+
+
+                foreach (var letter in commonFirstLetters)
+                {
+                    Console.WriteLine(letter);
+                }
+
+
+
+                // 4. First letters of product names not in customer names
+              
+            var productFirstLettersNotInCustomers = ListGenerator.ProductList.Select(p => p.ProductName[0])
+                    .Except(ListGenerator.CustomerList.Select(c => c.CustomerName[0]));
+
+
+                foreach (var letter in productFirstLettersNotInCustomers)
+                {
+                    Console.WriteLine(letter);
+                }
+
+
+              
+                // 5. Last three characters in each name of all customers and products
+               
+            var lastThreeChars = ListGenerator.CustomerList.Select(c => c.CustomerName.Length >= 3 ? c.CustomerName[^3..] : c.CustomerName)
+                    .Concat(ListGenerator.ProductList.Select(p => p.ProductName.Length >= 3 ? p.ProductName[^3..] : p.ProductName));
+
+
+                foreach (var chars in lastThreeChars)
+                {
+                    Console.WriteLine(chars);
+                }
+      
+
     #endregion
 
 
